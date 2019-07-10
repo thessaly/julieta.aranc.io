@@ -4,14 +4,125 @@ body {
  font-size: 14px;
 }
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-me {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-self: center;
+  height: 500px;
+}
+
+.highlighted-b {
+  font-weight: lighter;
+  background-color: #BD0048;
+  color: white;
+}
+
+.highlighted {
+    background-color: #98FF98;
+}
+
+
+.flex-polaroid {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-basis: 100%;
+}
+
+
+.flex-commtxt {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+}
+
+.flex-communities {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 5%;
+}
+
+.thumbnails {
+  display: flex;
+  flex-basis: 20%;
+  padding: 16px;
+  height: 80px;
+  width: 80px;
+}
+
+.polaroid1 {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 25px;
+  flex-basis: 15%;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.polaroid1:hover img {
+  opacity: 0.3;
+}
+.polaroid-txt {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.box1 {
+  border: 3px solid #FF9966;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20%;
+  padding: 5px;
+  flex-basis: 23%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  align-self: center;
+}
+.box2 {
+    padding: 30px 30px;
+    font-size: 14px;
+    flex-basis: 50%;
+    flex-grow: 0;
+    align-self: center;
+}
+
+#fondo {
+  position: absolute;
+	max-width: 100%;
+  bottom: 3%;
+  left: 0%;
+  padding-top: 50px;
+  padding-right: 50px;
+}
+
+@media screen and (orientation: portrait) {
+  #fondo {
+    max-width: 90%;
+    max-height: 100%;
+   }
+}
+
+@media screen and (orientation: landscape) {
+  #fondo { max-height: 90%; }
+}
+
 .navbar {
   overflow: hidden;
   width: 100%;
-  background-color: #f3f3f3;
-  position: fixed;
-  top: 0;
+  background-color: #F0F8FF;
   margin: 0px;
   padding: 0px 0px 0px 0px;
+  height: 45px;
 }
 
 .navbar li {
@@ -38,25 +149,33 @@ body {
   text-shadow: 1px 1px 1px #CDC0B0  ;
 }
 
-.active {
+#home {
   background-color: #CCFFCC;
   font-weight: bold;
+
+}
+.active {
+  background-color: #ffe4b5;
+    font-weight: bold;
 }
 
 footer {
   position: fixed;
   width: 100%;
-  background-color: #CDC0B0;
+  background-color: #BD0048;
   left: 0;
   bottom: 0;
 }
 
 .footer-content {
   display: block;
-  padding: 12px 16px;
-  color: black;
-  font-size: 12px;
+  padding: 8px 16px;
+  color: whitesmoke;
+  font-size: 13px;
   text-align: center;
 
+}
 
+.footer-content a {
+  color: lightblue;
 }
