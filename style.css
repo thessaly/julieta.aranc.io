@@ -1,181 +1,427 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
- margin: 0px 0px 0px 0px;
- font-family: monospace;
- font-size: 14px;
+  font-family: monospace;
+  font-size: 14px;
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.flex-me {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-self: center;
-  height: 500px;
-}
-
-.highlighted-b {
-  font-weight: lighter;
-  background-color: #BD0048;
-  color: white;
-}
-
-.highlighted {
-    background-color: #98FF98;
-}
-
-
-.flex-polaroid {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-basis: 100%;
-}
-
-
-.flex-commtxt {
-  display: flex;
-  flex-basis: 100%;
-  justify-content: center;
-}
-
-.flex-communities {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  flex-basis: 5%;
-}
-
-.thumbnails {
-  display: flex;
-  flex-basis: 20%;
-  padding: 16px;
-  height: 80px;
-  width: 80px;
-}
-
-.polaroid1 {
-  width: 80%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 25px;
-  flex-basis: 15%;
-  flex-shrink: 0;
-  flex-grow: 0;
-}
-
-.polaroid1:hover img {
-  opacity: 0.3;
-}
-.polaroid-txt {
-    text-align: center;
-    padding: 10px 20px;
-}
-
-.box1 {
-  border: 3px solid #FF9966;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 20%;
-  padding: 5px;
-  flex-basis: 23%;
-  flex-shrink: 0;
-  flex-grow: 0;
-  align-self: center;
-}
-.box2 {
-    padding: 30px 30px;
-    font-size: 14px;
-    flex-basis: 50%;
-    flex-grow: 0;
-    align-self: center;
-}
-
-#fondo {
+.pajarito {
   position: absolute;
-	max-width: 100%;
-  bottom: 3%;
-  left: 0%;
-  padding-top: 50px;
-  padding-right: 50px;
+  bottom: 28px;
 }
 
-@media screen and (orientation: portrait) {
-  #fondo {
-    max-width: 90%;
-    max-height: 100%;
-   }
-}
+.pajarito img{
+  max-width: 400px;
 
-@media screen and (orientation: landscape) {
-  #fondo { max-height: 90%; }
 }
-
+.hi {
+  position: fixed;
+  bottom: 350px;
+  right: 50px;
+}
 .navbar {
-  overflow: hidden;
-  width: 100%;
+  font-size: 14px;
   background-color: #F0F8FF;
-  margin: 0px;
-  padding: 0px 0px 0px 0px;
-  height: 45px;
+
 }
 
-.navbar li {
-  list-style: none;
-  display: inline;
-  float:right;
+.main-nav {
+  list-style-type: none;
+  display: none;
+  border-bottom: 2px solid #CCFFCC;
+
 }
 
-.navbar a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
+
+.nav-links,
+.logo {
   text-decoration: none;
+  color: black;
 }
 
-.navbar a:hover:not(.active) {
-      background-color: #FFFF99;
+.main-nav li {
+  text-align: center;
+  padding: 15px 16px;
 }
 
-#lang {
-  font-weight:bold;
-  color:rebeccapurple;
-  text-shadow: 1px 1px 1px #CDC0B0  ;
-}
-
-#home {
+.logo {
+  display: inline-block;
+  font-size: 14px;
+  margin: 0;
+  padding: 16px;
   background-color: #CCFFCC;
   font-weight: bold;
-
 }
-.active {
-  background-color: #ffe4b5;
-    font-weight: bold;
+
+.social {
+  display: inline-block;
+  font-size: 18px;
+  padding: 13px 15px;
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: black;
+  font-size: 24px;
+}
+
+.wrapper {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+
+    /* Direction of the items, can be row or column */
+    flex-direction: column;
+}
+header {
+    height: 30px;
+    background-color: pink;
+    margin-bottom: 40px;
+    diplay: flex;
+}
+
+nav {
+     position: relative;
 }
 
 footer {
-  position: fixed;
-  width: 100%;
+  height: 30px;
   background-color: #BD0048;
-  left: 0;
-  bottom: 0;
+  margin-top: 50px;
+  font-size: 12px;
+  text-align: center;
+  color: white;
+  padding: 8px 16px;
+  font-weight: bold;
 }
 
-.footer-content {
+footer span {
+  padding: 5px;
+
+}
+
+.active {
   display: block;
-  padding: 8px 16px;
-  color: whitesmoke;
-  font-size: 13px;
+  font-weight: bold;
+}
+
+
+main {
+    flex: 1;
+
+}
+
+.p1
+  {
+  padding: 40px;
+  text-align: center;
+  }
+
+
+.t1
+    {
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.thumbnails {
+  height: 80px;
+  margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.about {
+  padding: 40px;
+  padding-top: 0px;
+  text-align: justify;
+
+}
+
+.about p {
+  padding-bottom: 20px;
+}
+.communities {
   text-align: center;
 
 }
+.subtitle {
+text-align: center;
+margin-top: 20px;
+margin-bottom: 20px;
+font-size: 18px;
+}
 
-.footer-content a {
+.subtitle span {
+  background-color: #98FF98;
+
+}
+
+
+@media screen and (min-width: 640px)
+{
+
+  .pajarito {
+    position: absolute;
+    bottom:  0px;
+    left: 10px;
+  }
+
+  .pajarito img {
+    max-width: 600px;
+  }
+  .hi {
+    position: fixed;
+    bottom: 550px;
+    right: 100px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .projects {
+    display: flex;
+    flex-direction: row;
+    max-width: 750px;
+    margin: auto;
+    flex:2;
+    flex-wrap: wrap;
+  }
+  .p1 {
+    flex: 0.5;
+
+  }
+  .communities {
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;
+    margin: auto;
+    flex:1;
+  }
+
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 45px;
+    align-items: center;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border-bottom: 0px;
+
+  }
+
+  .main-nav li {
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+  .nav-links {
+    margin: 0;
+    display: block;
+    padding: 14px ;
+  }
+
+  .logo {
+    margin-top: 0;
+    font-size: 16px;
+    display: block;
+    padding: 13px ;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+
+  .foto {
+    max-width: 300px;
+    max-height: 300px;
+    align-self: flex-start;
+  }
+  .aboutme {
+    align-items: flex-start;
+  }
+}
+
+#tw {
+  margin: 0;
+  display: block;
+  padding: 16px ;
+  font-weight: bold;
+  position: absolute;
+  left: 123px;
+  top: 0;
+}
+
+#gh {
+  margin: 0;
+  display: block;
+  padding: 16px ;
+  font-weight: bold;
+  position: absolute;
+  left: 172px;
+  top: 0;
+}
+
+footer a {
   color: lightblue;
+}
+
+.nav-links:hover {
+color: white;
+background-color: #BD0048;
+}
+
+@media screen and (max-width: 400px)
+{
+  footer {
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+
+  .pajarito {
+    position: absolute;
+    bottom:  -7px;
+    left: 10px;
+  }
+
+  .pajarito img {
+    max-width: 800px;
+  }
+
+  .hi {
+    position: fixed;
+    bottom: 350px;
+    right: 400px;
+
+  }
+    .aboutme {
+      display: flex;
+      flex-direction: row;
+      text-align: justify;
+      max-width: 80%;
+      margin: auto;
+      align-items: center;
+    }
+
+    .foto {
+      max-height: 300px;
+      max-width: 300px;
+      margin: 40px;
+    }
+
+    .about {
+      flex: 2;
+      padding: 40px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+    .projects {
+      display: flex;
+      flex-direction: row;
+      max-width: 80%;
+      margin: auto;
+      flex:1;
+      align-items: baseline;
+      flex-wrap: nowrap;
+    }
+    .p1 {
+      flex: 2 250px;
+    }
+    .subtitle {
+      margin-top: 10px;
+    }
+
+    .communities {
+      display: flex;
+      flex-direction: row;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .t1 {
+      padding: 20px;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 0;
+      height: 45px;
+      align-items: center;
+    }
+
+    .main-nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      border-bottom: 0px;
+
+    }
+
+    .main-nav li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links {
+      margin: 0;
+      display: block;
+      padding: 14px ;
+    }
+
+    .logo {
+      margin-top: 0;
+      font-size: 16px;
+      display: block;
+      padding: 13px ;
+    }
+
+    .navbar-toggle {
+      display: none;
+    }
+
+    .thumbnails {
+      height: 60px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    footer {
+      margin-top: 30px;
+    }
+
+    header {
+      margin-bottom: 30px;
+    }
+}
+
+.foto {
+box-shadow: 5px 5px 3px grey;
+padding: 0px;
+max-width: 220px;
+max-height: 220px;
+margin: 40px;
 }
