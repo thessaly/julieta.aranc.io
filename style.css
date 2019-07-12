@@ -9,20 +9,7 @@ body {
   font-size: 14px;
 }
 
-.pajarito {
-  position: absolute;
-  bottom: 28px;
-}
 
-.pajarito img{
-  max-width: 400px;
-
-}
-.hi {
-  position: fixed;
-  bottom: 350px;
-  right: 50px;
-}
 .navbar {
   font-size: 14px;
   background-color: #F0F8FF;
@@ -293,6 +280,20 @@ background-color: #BD0048;
 {
   footer {
     height: 50px;
+  }
+  .pajarito {
+    position: absolute;
+    bottom: 28px;
+  }
+
+  .pajarito img{
+    max-width: 400px;
+
+  }
+  .hi {
+    position: fixed;
+    bottom: 350px;
+    right: 50px;
   }
 }
 
