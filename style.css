@@ -76,6 +76,7 @@ header {
 
 nav {
      position: relative;
+       z-index: 1;
 }
 
 footer {
@@ -151,13 +152,13 @@ font-size: 18px;
 
 }
 
-
-@media screen and (min-width: 640px)
+/* tablets y landscape */
+@media screen and (min-width: 500px)
 {
 
   .pajarito {
     position: absolute;
-    bottom:  0px;
+    bottom:  20px;
     left: 10px;
   }
 
@@ -166,8 +167,8 @@ font-size: 18px;
   }
   .hi {
     position: fixed;
-    bottom: 550px;
-    right: 100px;
+    left: 50%;
+    top: 30%;
   }
 
   main {
@@ -276,14 +277,15 @@ color: white;
 background-color: #BD0048;
 }
 
-@media screen and (max-width: 400px)
+/* smartphones */
+@media screen and (max-width: 500px)
 {
   footer {
     height: 50px;
   }
   .pajarito {
     position: absolute;
-    bottom: 28px;
+    bottom: 42px;
   }
 
   .pajarito img{
@@ -291,17 +293,19 @@ background-color: #BD0048;
 
   }
   .hi {
-    position: fixed;
-    bottom: 350px;
-    right: 50px;
+    position: absolute;
+    left:30%;
+    top:25%;
+    z-index: auto;
   }
 }
 
-@media screen and (min-width: 1000px) {
+/* desktop */
+@media screen and (min-width: 800px) {
 
   .pajarito {
-    position: absolute;
-    bottom:  -7px;
+    position: fixed;
+    bottom: 18px;
     left: 10px;
   }
 
@@ -310,11 +314,11 @@ background-color: #BD0048;
   }
 
   .hi {
-    position: fixed;
-    bottom: 350px;
-    right: 400px;
-
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
   }
+
     .aboutme {
       display: flex;
       flex-direction: row;
