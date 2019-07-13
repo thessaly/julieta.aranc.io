@@ -129,8 +129,6 @@ main {
 .about {
   padding: 40px;
   padding-top: 0px;
-  text-align: justify;
-
 }
 
 .about p {
@@ -341,6 +339,8 @@ background-color: #BD0048;
     .about {
       flex: 2;
       padding: 40px;
+      text-align: justify;
+
     }
 
     main {
