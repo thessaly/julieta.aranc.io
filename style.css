@@ -169,6 +169,7 @@ font-size: 18px;
     position: fixed;
     left: 50%;
     top: 30%;
+    max-height: 80%;
   }
 
   main {
@@ -277,6 +278,8 @@ color: white;
 background-color: #BD0048;
 }
 
+
+
 /* smartphones */
 @media screen and (max-width: 500px)
 {
@@ -299,6 +302,7 @@ background-color: #BD0048;
     z-index: auto;
   }
 }
+
 
 /* desktop */
 @media screen and (min-width: 800px) {
