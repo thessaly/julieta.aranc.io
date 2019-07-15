@@ -266,8 +266,18 @@ font-size: 18px;
     top:25%;
     z-index: auto;
   }
+
+  #hi-peq {
+    max-width: 70%;
+  }
 }
 
+/* landscape phones */
+@media screen and (max-width: 600px) and (orientation:landscape) {
+  .hi {
+    left:60%;
+  }
+}
 
 /* desktop */
 @media screen and (min-width: 800px) {
