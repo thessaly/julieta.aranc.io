@@ -150,8 +150,8 @@ font-size: 18px;
 
 }
 
-/* tablets y landscape */
-@media screen and (min-width: 500px)
+/* tablets */
+@media screen and (min-width: 600px)
 {
 
   .pajarito {
@@ -247,50 +247,17 @@ font-size: 18px;
   }
 }
 
-#tw {
-  margin: 0;
-  display: block;
-  padding: 16px ;
-  font-weight: bold;
-  position: absolute;
-  left: 123px;
-  top: 0;
-}
-
-#gh {
-  margin: 0;
-  display: block;
-  padding: 16px ;
-  font-weight: bold;
-  position: absolute;
-  left: 172px;
-  top: 0;
-}
-
-footer a {
-  color: lightblue;
-}
-
-.nav-links:hover {
-color: white;
-background-color: #BD0048;
-}
-
-
-
 /* smartphones */
-@media screen and (max-width: 500px)
+@media screen and (max-width: 600px)
 {
-  footer {
-    height: 50px;
-  }
+
   .pajarito {
     position: absolute;
-    bottom: 42px;
+    bottom: 22px;
   }
 
   .pajarito img{
-    max-width: 400px;
+    max-width: 360px;
 
   }
   .hi {
@@ -426,6 +393,37 @@ background-color: #BD0048;
       margin-bottom: 30px;
     }
 }
+
+
+#tw {
+  margin: 0;
+  display: block;
+  padding: 16px ;
+  font-weight: bold;
+  position: absolute;
+  left: 123px;
+  top: 0;
+}
+
+#gh {
+  margin: 0;
+  display: block;
+  padding: 16px ;
+  font-weight: bold;
+  position: absolute;
+  left: 172px;
+  top: 0;
+}
+
+footer a {
+  color: lightblue;
+}
+
+.nav-links:hover {
+color: white;
+background-color: #BD0048;
+}
+
 
 .foto {
 box-shadow: 5px 5px 3px grey;
