@@ -13,7 +13,6 @@ body {
 .navbar {
   font-size: 16px;
   background-color: #514d5f;
-
 }
 
 .main-nav {
@@ -120,8 +119,7 @@ main {
 .thumbnails {
   height: 80px;
   margin: 20px;
-/*  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-}
+q}
 
 .about {
   padding: 40px;
@@ -153,7 +151,7 @@ font-size: 18px;
 
   .pajarito {
     position: absolute;
-    bottom:  20px;
+    bottom:  31px;
     left: 10px;
   }
 
@@ -252,7 +250,7 @@ margin-right: 20px;
 
   .pajarito {
     position: absolute;
-    bottom: 22px;
+    bottom: 33px;
   }
 
   .pajarito img{
@@ -283,7 +281,7 @@ margin-right: 20px;
 
   .pajarito {
     position: fixed;
-    bottom: 18px;
+    bottom: 28px;
     left: 10px;
   }
 
