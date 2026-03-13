@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Julieta Arancio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mono: 'DM Mono', monospace;
+    --serif: 'Fraunces', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* ========= LIGHT: Cork & Parchment ========= */
+  body.light {
+    --bg: #f0e4d0;
+    --bg-card: #e8dac2;
+    --text: #2c1a10;
+    --text-dim: #6b5c48;
+    --accent: #c04828;
+    --accent-warm: #a07838;
+    --accent-rose: #8a4a3a;
+    --green: #687256;
+    --border: #d0be9e;
+  }
+
+  /* ========= DARK: Mahogany & Brass ========= */
+  body.dark {
+    --bg: #1c1410;
+    --bg-card: #281c14;
+    --text: #e2d2b8;
+    --text-dim: #948468;
+    --accent: #cc4c28;
+    --accent-warm: #b8903a;
+    --accent-rose: #a05848;
+    --green: #6a8258;
+    --border: #3a2e20;
+  }
+
+  body {
+    font-family: var(--mono);
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.4s, color 0.4s;
+  }
+
+  /* Grain */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  /* Nav right group */
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  /* Theme toggle */
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Nav */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--bg) 60%, transparent);
+  }
+
+  .nav-prompt {
+    font-size: 14px;
+    color: var(--accent-warm);
+    letter-spacing: 0.5px;
+  }
+
+  .nav-prompt a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-links a.active { color: var(--accent); }
+  .nav-links a.active::after { width: 100%; }
+
+  /* Page header */
+  .page-header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 8rem 2.5rem 2rem;
+  }
+
+  .page-header h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+  }
+
+  .page-header h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .page-header p {
+    color: var(--text-dim);
+    font-size: 14px;
+    max-width: 560px;
+    line-height: 1.8;
+  }
+
+  /* Filters */
+  .filters {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem 2.5rem 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-right: 0.5rem;
+  }
+
+  .filter-btn {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .filter-sep {
+    width: 1px;
+    height: 18px;
+    background: var(--border);
+    margin: 0 0.5rem;
+  }
+
+  .status-btn {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .status-btn:hover { border-color: var(--accent-warm); color: var(--accent-warm); }
+  .status-btn.active { background: var(--accent-warm); border-color: var(--accent-warm); color: white; }
+
+  /* Results count */
+  .results-count {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2.5rem 1rem;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  /* Project list */
+  .project-list {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2.5rem 4rem;
+  }
+
+  .project-card {
+    border-top: 1px solid var(--border);
+    padding: 1.8rem 0;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 2rem;
+    transition: all 0.3s;
+    opacity: 1;
+  }
+
+  .project-card:last-child { border-bottom: 1px solid var(--border); }
+
+  .project-card:hover { padding-left: 0.5rem; }
+
+  .project-card.hidden {
+    display: none;
+  }
+
+  .project-meta {
+    padding-top: 0.2rem;
+  }
+
+  .project-year {
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-status {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  .project-status.ongoing {
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+
+  .project-status.completed {
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+  }
+
+  .project-title {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+
+  .project-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .project-title a:hover { color: var(--accent); }
+
+  .project-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .project-tag {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--text-dim);
+  }
+
+  /* Footer */
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left {
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .footer-left a { color: var(--accent-warm); text-decoration: none; }
+
+  .footer-links {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  .footer-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+  }
+  .footer-links a:hover { color: var(--accent); transform: translateY(-2px); }
+
+  /* Mobile */
+  @media (max-width: 700px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 11px; }
+    .page-header { padding: 6rem 1.5rem 1.5rem; }
+    .filters { padding: 1rem 1.5rem 2rem; }
+    .results-count { padding: 0 1.5rem 1rem; }
+    .project-list { padding: 0 1.5rem 3rem; }
+    .project-card { grid-template-columns: 1fr; gap: 0.3rem; }
+    footer { flex-direction: column; gap: 1.5rem; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body class="light">
+
+<nav>
+  <span class="nav-prompt"><a href="/">~/julieta</a></span>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="/projects" class="active">Projects</a></li>
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle">
+      <span id="toggleIcon">☀️</span>
+      <span id="toggleLabel">Light</span>
+    </button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Project <em>Archive</em></h1>
+  <p>Research, policy, community organising, and creative work — everything I've been involved in, past and present.</p>
+</header>
+
+<div class="filters">
+  <span class="filter-label">Filter</span>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="policy">Policy</button>
+  <button class="filter-btn" data-filter="research">Research</button>
+  <button class="filter-btn" data-filter="open hardware">Open Hardware</button>
+  <button class="filter-btn" data-filter="open science">Open Science</button>
+  <button class="filter-btn" data-filter="community">Community</button>
+  <button class="filter-btn" data-filter="STS">STS</button>
+  <button class="filter-btn" data-filter="creative">Creative</button>
+  <div class="filter-sep"></div>
+  <button class="status-btn" data-status="all">All</button>
+  <button class="status-btn active" data-status="ongoing">Ongoing</button>
+  <button class="status-btn" data-status="completed">Completed</button>
+</div>
+
+<div class="results-count" id="resultsCount"></div>
+
+<div class="project-list" id="projectList">
+  <!-- Rendered by JS -->
+</div>
+
+<footer>
+  <div class="footer-left">
+    Made with 🖤 by me · All content <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+  </div>
+  <div class="footer-links">
+    <a href="https://github.com/thessaly" title="GitHub">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+    </a>
+    <a href="/cdn-cgi/l/email-protection#b3d9d2c1d2ddd0dadcf3c3c1dcc7dcddded2dadf9dd0dcde" title="Email">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2 4h20v16H2V4zm18 2l-8 5-8-5v12h16V6zm-8 3.5L4.5 5h15L12 9.5z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/aranciojulieta/" title="LinkedIn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const projects = [
+  {"title":"UNESCO Open Science Outlook 2","year":"2025–present","status":"ongoing","tags":["policy","open science"],"description":"Writing the second edition of UNESCO's flagship report on open science, based on survey responses from 82 member states four years after adopting the 2021 Recommendation.","link":null},
+  {"title":"Open Science Hardware Foundation","year":"2022–present","status":"ongoing","tags":["open hardware","governance"],"description":"Board of Directors, supporting the global community building open source scientific instruments and research tools.","link":"https://openhardware.science"},
+  {"title":"ORCA - Fostering Innovation Network (FIN)","year":"2024–present","status":"ongoing","tags":["open source","innovation"],"description":"Developing governance structures and facilitating workshops connecting open science practitioners across institutions.","link":null},
+  {"title":"Supporting Open Science Hardware - Policy Recommendations","year":"2021-2023","status":"completed","tags":["research","open hardware","STS"],"description":"How open hardware sparks novelty and creativity in science — 37 interviews and participant observation of the OpenFlexure microscope project.","link":"https://openflexure.org"},
+  {"title":"GOSH Community Framework","year":"2019","status":"completed","tags":["community","open hardware"],"description":"Co-authored practical guide for running events in the open science hardware space, now being converted into an interactive Quarto web book.","link":null},
+  {"title":"Clorofilia — poemas sacados de raíz","year":"2025–present","status":"ongoing","tags":["creative","writing"],"description":"Self-publishing a bilingual zine of poetry in Spanish and English, reversible format.","link":null},
+  {"title":"Open Hardware Ecosystem Mapping","year":"2026–present","status":"ongoing","tags":["open hardware","research"],"description":"Building a wiki-based mapping of the open hardware ecosystem using MediaWiki with Semantic MediaWiki extensions.","link":null},
+  {"title":"MERIT Portal — Research Assessment Reform at Berlin institute of Health","year":"2024–2026","status":"completed","tags":["open science","research assessment"],"description":"Research associate at QUEST Center (BIH), working on partnerships, evaluation studies, and PM for MERIT, an open source platform for transparent research assessment.","link":null},
+  {"title":"Postdoc — Drexel University / University of Bath","year":"2021–2024","status":"completed","tags":["research","STS","open hardware"],"description":"Sloan Foundation-funded postdoctoral research, conducting a case study of the OpenFlexure Microscope across the UK and Tanzania.","link":null},
+  {"title":"Open Hardware Makers","year":"2019–2024","status":"completed","tags":["community","open hardware","mentorship"],"description":"Co-founded a global mentorship programme for open hardware projects. Led strategy, curriculum design, communications, and a global community consultation.","link":"https://openhardware.space"},
+  {"title":"Appropedia — Surgical Training Ontology","year":"2020","status":"completed","tags":["open science","research"],"description":"Designed and implemented an open ontology for remote knowledge transfer of surgical skills, part of the Global Surgical Training Challenge.","link":"https://appropedia.org"},
+  {"title":"PhD — Technologies from Dialogues","year":"2016–2021","status":"completed","tags":["research","STS","open hardware"],"description":"Doctoral thesis on how the Global Open Science Hardware movement contributes to science democratisation in the Global South. Outstanding 10, recommended for publication.","link":"https://thessaly.github.io/phd"},
+  {"title":"reGOSH — Latin American Open Hardware Network","year":"2017–2022","status":"completed","tags":["community","open hardware"],"description":"Co-founded the Latin American network for promoting open science hardware. Coordinated Buenos Aires node, co-organised regional residencies.","link":null},
+];
+
+let activeTag = 'all';
+let activeStatus = 'ongoing';
+
+function render() {
+  const list = document.getElementById('projectList');
+  const count = document.getElementById('resultsCount');
+  list.innerHTML = '';
+
+  const filtered = projects.filter(p => {
+    const tagMatch = activeTag === 'all' || p.tags.includes(activeTag);
+    const statusMatch = activeStatus === 'all' || p.status === activeStatus;
+    return tagMatch && statusMatch;
+  });
+
+  count.textContent = `${filtered.length} project${filtered.length !== 1 ? 's' : ''}`;
+
+  filtered.forEach(p => {
+    const titleHtml = p.link
+      ? `<a href="${p.link}" target="_blank" rel="noopener">${p.title}</a>`
+      : p.title;
+
+    const tagsHtml = p.tags.map(t => `<span class="project-tag">${t}</span>`).join('');
+
+    list.innerHTML += `
+      <div class="project-card">
+        <div class="project-meta">
+          <div class="project-year">${p.year}</div>
+          <span class="project-status ${p.status}">${p.status}</span>
+        </div>
+        <div>
+          <div class="project-title">${titleHtml}</div>
+          <p class="project-desc">${p.description}</p>
+          <div class="project-tags">${tagsHtml}</div>
+        </div>
+      </div>
+    `;
+  });
+}
+
+// Tag filters
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeTag = btn.dataset.filter;
+    render();
+  });
+});
+
+// Status filters
+document.querySelectorAll('.status-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.status-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeStatus = btn.dataset.status;
+    render();
+  });
+});
+
+// Theme toggle
+const toggle = document.getElementById('themeToggle');
+const icon = document.getElementById('toggleIcon');
+const label = document.getElementById('toggleLabel');
+let isDark = false;
+toggle.addEventListener('click', () => {
+  isDark = !isDark;
+  document.body.className = isDark ? 'dark' : 'light';
+  icon.textContent = isDark ? '🌙' : '☀️';
+  label.textContent = isDark ? 'Dark' : 'Light';
+});
+
+</script>
+</body>
+</html>

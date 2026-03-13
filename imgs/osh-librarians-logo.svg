@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 220" width="700" height="275" font-family="'Arial Rounded MT Bold', 'Nunito', Arial, sans-serif">
+
+  <defs>
+    <marker id="arr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0.5 L6,3.5 L0,6.5 Z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="560" height="220" rx="16" fill="#F5A623"/>
+  <!-- Left accent strip -->
+  <rect x="0" y="0" width="8" height="220" rx="4" fill="#C87D1A"/>
+
+  <!-- ===== FLOWCHART COLUMN (center x=100) ===== -->
+
+  <!-- START oval: "open hardware" y=22 -->
+  <ellipse cx="100" cy="24" rx="58" ry="14" fill="#A8D8EA" stroke="#333" stroke-width="1.8"/>
+  <text x="100" y="28.5" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#1a1a1a">open hardware</text>
+
+  <!-- arrow down 38 → 52 -->
+  <line x1="100" y1="38" x2="100" y2="52" stroke="#444" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <!-- Diamond: "Has docs?" center=(100,78) half-w=40 half-h=26 -->
+  <polygon points="100,52 140,78 100,104 60,78" fill="#D4A8E8" stroke="#333" stroke-width="1.8"/>
+  <text x="100" y="74" text-anchor="middle" font-size="9" font-weight="bold" fill="#1a1a1a">Has</text>
+  <text x="100" y="86" text-anchor="middle" font-size="9" font-weight="bold" fill="#1a1a1a">docs?</text>
+
+  <!-- YES → right → REUSE -->
+  <line x1="140" y1="78" x2="162" y2="78" stroke="#444" stroke-width="1.8" marker-end="url(#arr)"/>
+  <circle cx="151" cy="67" r="8" fill="#8DB33A" stroke="white" stroke-width="1.5"/>
+  <text x="151" y="71.5" text-anchor="middle" font-size="7" font-weight="bold" fill="white">YES</text>
+  <rect x="162" y="67" width="44" height="22" rx="7" fill="#5BBF8A" stroke="#333" stroke-width="1.8"/>
+  <text x="184" y="82" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">REUSE ♥</text>
+
+  <!-- NO → down → improve docs -->
+  <line x1="100" y1="104" x2="100" y2="128" stroke="#444" stroke-width="1.8" marker-end="url(#arr)"/>
+  <circle cx="114" cy="118" r="8" fill="#E05A3A" stroke="white" stroke-width="1.5"/>
+  <text x="114" y="122.5" text-anchor="middle" font-size="7" font-weight="bold" fill="white">NO</text>
+
+  <!-- improve docs box -->
+  <rect x="58" y="128" width="84" height="22" rx="7" fill="#6BB8D4" stroke="#333" stroke-width="1.8"/>
+  <text x="100" y="143" text-anchor="middle" font-size="9" font-weight="bold" fill="#1a1a1a">improve docs</text>
+
+  <!-- arrow down → SHARE -->
+  <line x1="100" y1="150" x2="100" y2="164" stroke="#444" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <!-- SHARE terminal -->
+  <rect x="67" y="164" width="66" height="22" rx="7" fill="#5BBF8A" stroke="#333" stroke-width="1.8"/>
+  <text x="100" y="179" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">SHARE ♥</text>
+
+  <!-- Key icon bottom-right of flowchart, clear of all elements -->
+  <g transform="translate(183, 168) rotate(-30)">
+    <circle cx="0" cy="0" r="8" fill="#F5C842" stroke="#444" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="4" fill="#fff"/>
+    <rect x="7" y="-2" width="16" height="4" rx="1.2" fill="#F5C842" stroke="#444" stroke-width="1.5"/>
+    <rect x="16" y="2" width="3" height="4" rx="0.8" fill="#444"/>
+    <rect x="20" y="2" width="3" height="6" rx="0.8" fill="#444"/>
+  </g>
+
+  <!-- ===== VERTICAL DIVIDER ===== -->
+  <line x1="222" y1="16" x2="222" y2="204" stroke="#C87D1A" stroke-width="2" stroke-dasharray="4,3"/>
+
+  <!-- ===== TEXT COLUMN ===== -->
+  <text x="240" y="58" font-size="26" font-weight="bold" fill="#1a1a1a" letter-spacing="-0.3">Supporting</text>
+  <text x="240" y="90" font-size="26" font-weight="bold" fill="#1a1a1a" letter-spacing="-0.3">Open Science</text>
+  <text x="240" y="122" font-size="26" font-weight="bold" fill="#1a1a1a" letter-spacing="-0.3">Hardware</text>
+
+  <line x1="240" y1="133" x2="540" y2="133" stroke="#C87D1A" stroke-width="2.5"/>
+
+  <text x="240" y="157" font-size="18" font-weight="bold" fill="#C04828" letter-spacing="0.2">A Guide for Librarians</text>
+  <text x="240" y="178" font-size="11" fill="#5a3a10">by Julieta Arancio · CC-BY 4.0</text>
+  <text x="240" y="198" font-size="11" fill="#C04828">♥ open knowledge</text>
+
+</svg>
